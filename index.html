@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>封条游戏厅 · 通关解锁</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230f1417'/%3E%3Ctext x='16' y='23' font-size='17' text-anchor='middle' fill='%23d8a24a' font-family='sans-serif'%3E%E5%B0%81%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+
+  <!-- ================= 首页 ================= -->
+  <section id="home">
+    <header class="top">
+      <div class="brand">
+        <div class="title">封条游戏厅 · 通关解锁</div>
+        <div class="sub">想拿到东西吗？那就来玩个游戏吧</div>
+        <div class="count"><b id="gameCount">15</b>款玩法可选</div>
+      </div>
+      <span class="stampmark" aria-hidden="true"><span>封</span></span>
+    </header>
+
+    <div class="block" id="dlBlock">
+      <h2>下载文件</h2>
+      <div class="desc">点「立即下载」，文件就在这儿。想到手，先陪我一局。</div>
+      <div class="file">
+        <span class="ico" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M6 3.5h7l5 5v12H6z"/><path d="M13 3.5v5h5"/><path d="M9 13h6M9 17h4"/>
+          </svg>
+        </span>
+        <div>
+          <div class="fname" id="fileName">空白文档.docx</div>
+          <div class="fmeta" id="fileMeta">Word 文档</div>
+        </div>
+      </div>
+      <button class="btn" id="btnDownload" type="button">立即下载</button>
+      <div class="foot">文件已备好，只是先得过一关。中途放弃也算没过，回头再抽一次。</div>
+    </div>
+    <div class="block" id="hallBlock" hidden>
+      <h2>游戏厅</h2>
+      <div class="desc">头一张是盲盒——抽到哪款全凭运气；后面十五款任你挑。通关就自动下载。</div>
+      <div class="hallgrid" id="gameGrid"></div>
+      <div class="foot">点卡片直接开打，不想挑就点盲盒。</div>
+    </div>
+    <div class="askmask" id="askMask" hidden>
+      <div class="askcard" role="dialog" aria-modal="true" aria-labelledby="askTitle">
+        <span class="askseal" aria-hidden="true"><span>封</span></span>
+        <h3 id="askTitle">宝贝咱不急</h3>
+        <p>咱先玩个游戏，通关就给你。</p>
+        <button class="btn" id="btnOkay" type="button">好</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 游戏视图 ================= -->
+  <section class="gameview" id="gameview" hidden>
+    <div class="ghead">
+      <div>
+        <div class="gname" id="gName">游戏</div>
+        <div class="gmeta" id="gMeta">普通</div>
+      </div>
+      <div class="ghbtns">
+        <button type="button" id="btnRestart">重开这局</button>
+        <button type="button" id="btnHome">回首页</button>
+      </div>
+    </div>
+    <div class="chiprow" id="hud" style="margin-bottom:12px"></div>
+    <div class="stage">
+      <div class="inner" id="stage"></div>
+      <div class="toast" id="toast"></div>
+      <div class="overlay" id="ov" hidden><div class="cardflow" id="card"></div></div>
+    </div>
+    <div class="stagehint" id="stagehint"></div>
+  </section>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
